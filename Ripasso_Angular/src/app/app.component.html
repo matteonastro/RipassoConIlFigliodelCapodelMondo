@@ -1,7 +1,7 @@
 
 <div *ngFor="let x of lista">
     
-    <a href="carta/carta.component.html">{{x.name}}</a>
+    <a routerLink="carta/{{getlastpart(x.url)}}">{{x.name}}</a>
 
 </div>
 

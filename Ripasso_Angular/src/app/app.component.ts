@@ -22,6 +22,11 @@ export class AppComponent {
   Cerca = (data : Root) => {
     this.lista = data.results
   }
+  
+  getlastpart(url:string){
+    const parts =url.split('/')
+    return parts.at(-2)
+  }
 
   
 
