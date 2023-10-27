@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartaComponent } from './carta/carta.component';
 
 const routes: Routes = [
-  {path:"carta/:path",component:CartaComponent}
+  {path:"carta/:url",component:CartaComponent}
 ];
 
 @NgModule({
