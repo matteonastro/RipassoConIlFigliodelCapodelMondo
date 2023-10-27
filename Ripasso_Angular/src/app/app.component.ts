@@ -2,7 +2,7 @@ import { getLocaleDateTimeFormat } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Root } from './model';
+import { Result, Root } from './model';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +11,20 @@ import { Root } from './model';
 })
 export class AppComponent {
   title = 'Ripasso_Angular';
-  obs! : Observable<any>;
-  lista=[] ;
+  obs! : Observable<Root>;
+  lista : Result[]=[];
 
   constructor(public http: HttpClient) {
-    this.obs=http.get("https://pokeapi.co/api/v2/type")
+    this.obs=http.get<Root>("https://pokeapi.co/api/v2/type")
     this.obs.subscribe(this.Cerca)
   }
 
-  Cerca(data : any){
+  Cerca = (data : Root) => {
     this.lista = data.results
   }
 
   
 
-  
+
 }
 
